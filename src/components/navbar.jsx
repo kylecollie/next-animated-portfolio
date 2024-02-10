@@ -1,5 +1,12 @@
 import Link from "next/link";
 
+const links = [
+    { url: "/", title: "Home" },
+    { url: "/about", title: "About" },
+    { url: "/portfolio", title: "Portfolio" },
+    { url: "/contact", title: "Contact" },
+];
+
 const Navbar = () =>
 {
     return (
@@ -14,11 +21,17 @@ const Navbar = () =>
             {/* RESPONSIVE MENU */}
             <div className=''>
                 {/* MENU BUTTON */}
-                <button className="w-10 h-8 flex flex-col justify-between">
-                    <div className="w-10 h-1 bg-black rounded"></div>
-                    <div className="w-10 h-1 bg-black rounded"></div>
-                    <div className="w-10 h-1 bg-black rounded"></div>
+                <button className="w-10 h-8 flex flex-col justify-between z-50 relative">
+                    <div className="w-10 h-1 bg-white rounded"></div>
+                    <div className="w-10 h-1 bg-white rounded"></div>
+                    <div className="w-10 h-1 bg-white rounded"></div>
                 </button>
+                {/* MENU LIST */}
+                <div className="absolute top-0 left-0 w-screen h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-4xl">
+                    {links.map((link) => (
+                        <Link href={link.url} key={link.title} className="">{link.title}</Link>
+                    ))}
+                </div>
             </div>
         </div>
     );
