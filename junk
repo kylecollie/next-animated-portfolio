@@ -1,0 +1,47 @@
+{/* EXPERIENCE LIST ITEM */}
+                            <div className="">
+                                {/* LEFT */}
+                                <div className=""></div>
+                                {/* CENTER */}
+                                <div className="">
+                                    {/* LINE */}
+                                    <div className="">
+                                        {/* LINE CIRCLE */}
+                                        <div className=""></div>
+                                    </div>
+                                </div>
+                                {/* RIGHT */}
+                                <div className="">
+                                    {/* JOB TITLE */}
+                                    <div className="">Junior JavaScrpt Engineer</div>
+                                    {/* JOB DESC */}
+                                    <div className="">My postion before!</div>
+                                    {/* JOB DATE */}
+                                    <div className="">2020 - 2024</div>
+                                    {/* JOB COMPANY */}
+                                    <div className="">QTS</div>
+                                </div>
+                            </div>
+                            {/* EXPERIENCE LIST ITEM */}
+                            <div className="">
+                                {/* LEFT */}
+                                <div className="">
+                                    {/* JOB TITLE */}
+                                    <div className="">JavaScrpt Engineer</div>
+                                    {/* JOB DESC */}
+                                    <div className="">Way back!</div>
+                                    {/* JOB DATE */}
+                                    <div className="">2015 - 2020</div>
+                                    {/* JOB COMPANY */}
+                                    <div className="">Estes</div>
+                                </div>
+                                {/* CENTER */}
+                                <div className="">
+                                    {/* LINE */}
+                                    <div className="">
+                                        {/* LINE CIRCLE */}
+                                        <div className=""></div>
+                                    </div>
+                                </div>
+                                {/* RIGHT */}
+                            </div>
