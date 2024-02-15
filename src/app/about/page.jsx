@@ -1,13 +1,16 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { motion, useScroll } from 'framer-motion';
+import { motion, useInView, useScroll } from 'framer-motion';
 import Brain from '@/components/brain';
 
-function AboutPage()
+const AboutPage = () => 
 {
     const containerRef = useRef();
     const { scrollYProgress } = useScroll({ container: containerRef });
+
+    const skillRef = useRef();
+    const isSkillRefInView = useInView(skillRef);
 
     return (
         <motion.div
@@ -17,7 +20,7 @@ function AboutPage()
             transition={{ duration: 1 }}
         >
             {/* CONTAINER */}
-            <div className="h-full overflow-scroll lg:flex">
+            <div className="h-full overflow-scroll lg:flex" ref={containerRef}>
                 {/* TEXT CONTAINER */}
                 <div className="p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 lg:w-2/3 lg:pr-0 xl:w-1/2">
                     {/*  BIOGRAPHY CONTAINER */}
@@ -81,9 +84,9 @@ function AboutPage()
                         </motion.svg>
                     </div>
                     {/*  SKILLS CONTAINER */}
-                    <div className="flex flex-col gap-12 justify-center">
+                    <div className="flex flex-col gap-12 justify-center" ref={skillRef}>
                         {/* SKILL TITLE */}
-                        <h1 className='font-bold text-2xl'>SKILLS</h1>
+                        <motion.h1 initial={{ x: '-300px' }} animate={isSkillRefInView ? { x: 0 } : {}} transition={{ delay: 0.2 }} className='font-bold text-2xl'>SKILLS</motion.h1>
                         {/* SKILL LIST */}
                         <div className="flex flex-wrap gap-4">
                             <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
@@ -243,8 +246,8 @@ function AboutPage()
                     <Brain scrollYProgress={scrollYProgress} />
                 </div>
             </div>
-        </motion.div>
+        </motion.div >
     );
-}
+};
 
 export default AboutPage;
